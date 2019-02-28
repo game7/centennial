@@ -1,0 +1,36 @@
+---
+title: Team
+layout: default
+bodyClass: page-team-list
+---
+
+<div class="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Meet The Team</h1>
+        <p>
+          Our team of qualified accountants and financial consultants can help
+          your business at any stage of it's growth.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container pb-6">
+  <div class="row">
+    {% for team in site.team %}
+    <div class="col-12 col-md-4 mb-1">
+      <div class="service service-summary">
+        <div class="service-content">
+          <h2 class="service-title">
+            <a href="{{site.baseurl}}{{ team.url }}">{{ team.title }}</a>
+          </h2>
+          {{ team.content | markdownify | strip_html | truncate: 100 }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

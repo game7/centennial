@@ -1,0 +1,82 @@
+---
+title: Jekyll Serif - Jekyll Small Business Theme
+layout: default
+bodyClass: page-home
+---
+<!-- 
+<div class="intro pb-4">
+  <div class="container">
+    <h1>Serif - Jekyll Small Business Theme.</h1>
+    <p>Our business helps hundreds of customers with their accounting and taxation needs each year.</p>
+  </div>
+</div>
+
+<div class="container pt-2">
+  <div class="call">
+    <div class="call-box-top">
+      <div class="call-phone"><strong>Phone: </strong> {{ site.data.contact.phone }} </div>
+      <div class="call-email"><strong>Email: </strong>
+        <a href="mailto:{{ site.data.contact.email }}">
+          {{ site.data.contact.email }}
+        </a>
+      </div>
+    </div>
+    <div class="call-box-bottom">
+      <a href="{{site.baseurl}}/contact" class="button">Contact</a>
+    </div>
+  </div>
+</div> -->
+
+<div class="container pt-8 pt-md-10">
+  <div class="row">
+    <div class="col-md-4">
+        Real Estate has been a significant practice area for Principals of CENTENNIAL CORPORATION and Affiliates for over 30 years. The Principals have worked extensively in the areas of, acquisition, development, construction, property management and debt structuring for properties through out the Western United States.
+    </div>
+  </div>
+</div>
+
+<div class="container pt-8 pt-md-10">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <h2 class="title-3 text-dark mb-3">Our Services</h2>
+    </div>
+    {% for service in site.services %}
+    <div class="col-12 col-md-4 mb-1">
+      <div class="service service-summary">
+        <div class="service-content">
+          <h2 class="service-title">
+            <a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a>
+          </h2>
+          {{ service.content | markdownify | strip_html | truncate: 100 }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="col-12 text-center">
+      <a class="button button-primary mt-2" href="{{site.baseurl}}/services">View All Services</a>
+    </div>
+  </div>
+</div>
+
+<div class="container pt-8 pt-md-10 mb-10">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <h2 class="title-3 text-dark mb-3">Our Team</h2>
+    </div>
+    {% for team in site.team %}
+    <div class="col-12 col-md-4 mb-1">
+      <div class="service service-summary">
+        <div class="service-content">
+          <h2 class="service-title">
+            <a href="{{site.baseurl}}{{ team.url }}">{{ team.title }}</a>
+          </h2>
+          {{ team.content | markdownify | strip_html | truncate: 100 }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="col-12 text-center">
+      <a class="button button-primary mt-2" href="{{site.baseurl}}/team">View All Teams</a>
+    </div>
+  </div>
+</div>
